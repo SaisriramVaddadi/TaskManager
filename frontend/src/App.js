@@ -1,9 +1,11 @@
 import React from "react";
-import "./App.css";
+import Dashboard from "./Components/Dashboard";
+import "./App.scss";
+
 const App = () => {
   return (
-    <div>
-      <h1 >Hi there! Welcome to Task Manager.</h1>
+    <div className="app">
+      <Dashboard/>
     </div>
   );
 };

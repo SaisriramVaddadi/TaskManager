@@ -1,0 +1,25 @@
+.table-style{
+    display: table;
+    table-layout: auto;
+    width: 100%;
+    background-color: rgba(244,244,244,1);
+}
+
+.t-row{
+    display: table-row;
+}
+
+.t-cell{
+    display: table-cell;
+    width: 25%;
+    border-right: 1px solid white;
+    padding: 1rem 1rem;
+}
+
+.table-header{
+    position: fixed;
+}
+
+.task-data{
+    overflow-y: auto;
+}

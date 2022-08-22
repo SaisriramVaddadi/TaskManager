@@ -1,0 +1,31 @@
+.header-wrapper{
+    background-color: white;
+    height: 70px;
+    top: 0;
+    left:0;
+    right:0;
+    border-bottom: 1px solid rgb(197, 193, 193);
+    position: fixed;
+}
+
+.header-body{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0.8rem;
+    h1{
+        flex: 0.9;
+        font-size: 18px;
+        font-weight: 500;
+    }
+}
+
+.header-controls{
+    flex: 0.1;
+    display: flex;
+    justify-content: space-around;
+}
+
+controls-icon{
+    cursor: pointer !important;
+}
