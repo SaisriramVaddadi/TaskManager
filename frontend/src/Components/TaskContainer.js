@@ -1,58 +1,57 @@
-import React from 'react';
+import React, { useContext } from "react";
 import "./TaskContainer.scss";
-import TaskCard from './Common/TaskCard';
-const arrNew = [1,2,];
-const arrInP = [1,2,3,4,5];
-const arrComp = [1,2,3,4];
-const arrClo = [1,2,3,4,5,6,7,8,9,10,11,12];
+import TaskCard from "./Common/TaskCard";
+import { TasksContext } from "../App";
 
 const TaskContainer = () => {
-    return (
-        <div style={{marginTop: '70px'}}>
-            <div className='table-style table-header'>
-                <div className='t-row'>
-                    <div className='t-cell'>
-                        New
-                    </div>
-                    <div className='t-cell'>
-                        In Progress
-                    </div>
-                    <div className='t-cell'>
-                        Completed
-                    </div>
-                    <div className='t-cell'>
-                        Closed
-                    </div>
-                </div>
-            </div>
-            <div style={{paddingTop: '70px'}}>
-            <div className="table-style task-data">
-                <div className="t-row">
-                    <div className = "t-cell card-wrapper" >
-                        {arrNew.map(()=> {
-                            return <TaskCard/>
-                        })}
-                    </div>
-                    <div className = "t-cell card-wrapper" >
-                        {arrInP.map(()=> {
-                                return <TaskCard/>
-                            })}
-                    </div>
-                    <div className = "t-cell card-wrapper" >
-                        {arrComp.map(()=> {
-                                return <TaskCard/>
-                        })}
-                    </div>
-                    <div className = "t-cell card-wrapper" >
-                        {arrClo.map(()=> {
-                            return <TaskCard/>
-                        })}
-                    </div>
-                </div>
-            </div>
-            </div>
-        </div>
-    )
-}
+  const { tasks, handleAddTask, updateTaskState } = useContext(TasksContext);
 
-export default TaskContainer
+    return (
+      <div style={{ marginTop: "70px" }}>
+        <div className="table-style table-header">
+          <div className="t-row">
+            <div className="t-cell">New</div>
+            <div className="t-cell">In Progress</div>
+            <div className="t-cell">Completed</div>
+            <div className="t-cell">Closed</div>
+          </div>
+        </div>
+        <div style={{ paddingTop: "70px" }}>
+          <div className="table-style task-data">
+            <div className="t-row">
+              <div className="t-cell card-wrapper">
+                {tasks.map((task, key) => {
+                  if (task.state === "new") {
+                    return <TaskCard {...task} updateTaskState={updateTaskState} key={key}/>;
+                  }
+                })}
+              </div>
+              <div className="t-cell card-wrapper">
+                {tasks.map((task, key) => {
+                  if (task.state === "inProgress") {
+                    return <TaskCard {...task} updateTaskState={updateTaskState} key={key}/>;
+                  }
+                })}
+              </div>
+              <div className="t-cell card-wrapper">
+                {tasks.map((task, key) => {
+                  if (task.state === "completed") {
+                    return <TaskCard {...task} updateTaskState={updateTaskState} key={key}/>;
+                  }
+                })}
+              </div>
+              <div className="t-cell card-wrapper">
+                {tasks.map((task, key) => {
+                  if (task.state === "closed") {
+                    return <TaskCard {...task} updateTaskState={updateTaskState} key={key}/>;
+                  }
+                })}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+};
+
+export default TaskContainer;

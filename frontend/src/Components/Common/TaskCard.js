@@ -1,21 +1,22 @@
 import React from 'react'
 import "./TaskCard.scss";
 
-const TaskCard = () => {
+const TaskCard = (props) => {
+    const { id, title, state, updateTaskState } = props;
     return (
         <div className='task-card-wrapper'>
             <span>
-               <strong>543211  </strong> 
-                TaskManager - This is the first task
+               <strong>{id}</strong> 
+                {title}
             </span>
             <div className='state-wrapper'>
                 <span>state</span>
                 <div>
-                    <select name="status" id="status">
-                        <option value="New">New</option>
-                        <option value="In Progress">In Progress</option>
-                        <option value="Completed">Completed</option>
-                        <option value="Closed">Closed</option>
+                    <select name="status" id="status" value={state} onChange={(e)=> updateTaskState(e, id)}>
+                        <option value="new">New</option>
+                        <option value="inProgress">In Progress</option>
+                        <option value="completed">Completed</option>
+                        <option value="closed">Closed</option>
                     </select>
                 </div>
             </div>
