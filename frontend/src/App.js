@@ -21,9 +21,10 @@ const App = () => {
   const handleAddTask = () =>{
     console.log("Hello world");
   }
-  const updateTaskState = (e, id) =>{
-    console.log("Hello world", e.target.value, id);
-    socket.emit("updateState", e.target.value, id);
+  
+  const updateTaskState = (state, id) =>{
+    console.log("Hello world", state, id);
+    socket.emit("updateState", state, id);
   }
   
   

@@ -27,6 +27,56 @@ let tasks = [
     title: "Task Manager - Create Github repo and setup",
     state: "closed",
   },
+  {
+    id: 0005,
+    title: "Task Manager - Add Sign In Page",
+    state: "new",
+  },
+  {
+    id: 0006,
+    title: "Task Manager - Build Layout",
+    state: "inProgress",
+  },
+  {
+    id: 0007,
+    title: "Task Manager - Do Basic Setup",
+    state: "completed",
+  },
+  {
+    id: 0021,
+    title: "Task Manager - Create Github repo and setup",
+    state: "closed",
+  },
+  {
+    id: 0023,
+    title: "Task Manager - Add Sign In Page",
+    state: "new",
+  },
+  {
+    id: 0010,
+    title: "Task Manager - Build Layout",
+    state: "inProgress",
+  },
+  {
+    id: 0011,
+    title: "Task Manager - Add Sign In Page",
+    state: "new",
+  },
+  {
+    id: 0012,
+    title: "Task Manager - Build Layout",
+    state: "inProgress",
+  },
+  {
+    id: 0013,
+    title: "Task Manager - Add Sign In Page",
+    state: "new",
+  },
+  {
+    id: 0014,
+    title: "Task Manager - Build Layout",
+    state: "inProgress",
+  },
 ];
 
 http.listen(PORT, () => {
